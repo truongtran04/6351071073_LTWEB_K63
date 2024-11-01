@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/templatemo_style.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!--  Free CSS Templates from www.templatemo.com -->
+    <div id="templatemo_container">
+        @Html.Partial("_PartialMenu")
+
+        <div id="templatemo_content">
+            <div id="templatemo_content_left">
+                
+                @Html.Action("ChuDe", "BookStore")
+                @Html.Action("NhaXuatBan", "BookStore")
+
+            </div> <!-- end of content left -->
+            <div id="templatemo_content_right">
+                @RenderBody()
+            </div> <!-- end of content right -->
+
+            <div class="cleaner_with_height">&nbsp;</div>
+            
+        </div> <!-- end of content -->
+
+        @Html.Partial("_PartialFooter")
+        <!-- end of footer -->
+        <!--  Free CSS Template www.templatemo.com -->
+    </div> <!-- end of container -->
+    <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+
+
+    <div>
+
+    </div>
+</body>
+</html>
