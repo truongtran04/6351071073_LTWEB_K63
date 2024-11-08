@@ -49,15 +49,15 @@ namespace MvcBookStore.Controllers
             {
                 ViewData["Loi4"] = "Phải nhập lại mật khẩu";
             }
-            else if (String.IsNullOrEmpty(email))
+            if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi5"] = "Email không được bỏ trống";
             }
-            else if (String.IsNullOrEmpty(diaChi))
+            if (String.IsNullOrEmpty(diaChi))
             {
                 ViewData["Loi6"] = "Địa chỉ không được bỏ trống";
             }
-            else if (String.IsNullOrEmpty(dienThoai))
+            if (String.IsNullOrEmpty(dienThoai))
             {
                 ViewData["Loi7"] = "Điện thoại không được bỏ trống";
             }
