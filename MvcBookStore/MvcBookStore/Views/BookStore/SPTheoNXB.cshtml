@@ -17,8 +17,8 @@
         <div class="product_info">
             <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
             <h3>@item.Giaban</h3>
-            <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-            <div class="detail_button"><a href="subpage.html">Detail</a></div>
+            <div class="buy_now_button"><a href="@Url.Action("ThemGioHang", "Giohang", new { @iMasach = item.Masach, @strUrl = Request.Url.ToString()})">Buy Now</a></div>
+            <div class="detail_button"><a href="@Url.Action("Details", "BookStore", new { id = item.Masach})">Detail</a></div>
         </div>
         <div class="cleaner">&nbsp;</div>
     </div>

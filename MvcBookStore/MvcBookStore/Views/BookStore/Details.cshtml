@@ -3,13 +3,37 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+<style>
+    #DatMua a{
+        clear: both;
+        background-color: red;
+        color: white;
+        width: 20px;
+        height: 35px;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    #DatMua a:hover{
+        background-color: gray;
+        color: red;
+    }
+</style>
 <h2>Thông tin chi tiết</h2>
 <div id="templatemo_content_right">
 
     <h1>@Model.Tensach</h1>
     <div class="image_panel"><img src="~/Content/images/@Model.Anhbia" alt="CSS Template" width="100" height="150" /></div>
     <p>@Model.Mota</p>
-    
+
 
     <div class="cleaner_with_height">&nbsp;</div>
 </div> <!-- end of content right -->
+<div class="buy_now_button">
+    <a href="@Url.Action("ThemGioHang", "Giohang", new { @iMasach = Model.Masach, @strUrl = Request.Url.ToString()})">
+        Đặt mua
+    </a>
+</div>
