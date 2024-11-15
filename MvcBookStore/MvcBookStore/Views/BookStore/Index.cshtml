@@ -1,4 +1,6 @@
-﻿@model IEnumerable<MvcBookStore.Models.SACH>
+﻿@using MvcBookStore.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<SACH>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -13,7 +15,7 @@
         <a href="@Url.Action("Details", "BookStore", new { id = item.Masach})">
             <img src="~/Content/images/@item.Anhbia" alt="image" width="100" height="140" />
         </a>
-        
+
         <div class="product_info">
             <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
             <h3>@item.Giaban</h3>
@@ -23,3 +25,45 @@
         <div class="cleaner">&nbsp;</div>
     </div>
 }
+
+
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+<style>
+    .MenuTrang {
+        margin-top: 10px;
+    }
+
+        .MenuTrang li {
+            display: inline-block;
+            margin: 0 5px; /* Khoảng cách giữa các mục */
+        }
+
+        .MenuTrang a,
+        .MenuTrang span {
+            display: inline-block;
+            width: 38px;
+            height: 30px;
+            line-height: 30px; /* Canh giữa theo chiều dọc */
+            text-align: center;
+            color: #fff; /* Màu chữ trắng */
+            border: 1px solid white;
+            border-radius: 5px; /* Bo góc */
+            text-decoration: none; /* Bỏ gạch chân */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng hover */
+        }
+
+            .MenuTrang a:hover {
+                background-color: rgba(0, 123, 255, 1); /* Màu nền khi hover */
+            }
+
+        .MenuTrang .active {
+            background-color: rgba(0, 123, 255, 1); /* Màu nền của mục đang chọn */
+            border-radius: 5px; /* Bo góc */
+            cursor: default;
+        }
+</style>

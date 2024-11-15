@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MvcBookStore.Models.NHAXUATBAN>
+
+@{
+    ViewBag.Title = "NhaXB";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-uppercase">Quản lý nhà xuất bản</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dienthoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dienthoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNXB }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNXB }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNXB })
+        </td>
+    </tr>
+}
+
+</table>

@@ -25,6 +25,7 @@ namespace MvcBookStore.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<CHITIETDONDATHANG> CHITIETDONDATHANGs { get; set; }
         public DbSet<CHUDE> CHUDEs { get; set; }
         public DbSet<DONDATHANG> DONDATHANGs { get; set; }

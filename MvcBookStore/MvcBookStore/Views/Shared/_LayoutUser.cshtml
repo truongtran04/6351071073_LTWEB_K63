@@ -3,17 +3,36 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/Content/templatemo_style.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo_style.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <!--  Free CSS Templates from www.templatemo.com -->
     <div id="templatemo_container">
         @Html.Partial("_PartialMenu")
+        <div id="templatemo_header">
+            <div id="templatemo_special_offers">
+                <p>
+                    <span>25%</span> discounts for
+                    purchase over $80
+                </p>
+                <a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+            </div>
+
+
+            <div id="templatemo_new_books">
+                <ul>
+                    <li>Suspen disse</li>
+                    <li>Maece nas metus</li>
+                    <li>In sed risus ac feli</li>
+                </ul>
+                <a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+            </div>
+        </div> <!-- end of header -->
 
         <div id="templatemo_content">
             <div id="templatemo_content_left">
-                
+
                 @Html.Action("ChuDe", "BookStore")
                 @Html.Action("NhaXuatBan", "BookStore")
 
@@ -23,7 +42,7 @@
             </div> <!-- end of content right -->
 
             <div class="cleaner_with_height">&nbsp;</div>
-            
+
         </div> <!-- end of content -->
 
         @Html.Partial("_PartialFooter")
@@ -31,10 +50,5 @@
         <!--  Free CSS Template www.templatemo.com -->
     </div> <!-- end of container -->
     <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
-
-
-    <div>
-
-    </div>
 </body>
 </html>

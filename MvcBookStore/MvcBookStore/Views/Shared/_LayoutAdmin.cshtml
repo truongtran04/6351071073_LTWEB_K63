@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/css/templatemo_style.css" rel="stylesheet" />
+    <script src="~/tinymce_7.5.1/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="templatemo_container">
+        <div id="templatemo_menu">
+            <ul>
+                <li>
+                    @Html.ActionLink("TRANG CHỦ", "Index", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("Quản lý chủ đề", "ChuDe", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("Quản lý nhà xuất bản", "NhaXB", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("Quản lý sách", "Sach", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("Thống kê", "ThongKe", "Admin")
+                </li>
+                <li>
+                    @Html.ActionLink("User", "Index", "BookStore")
+                </li>
+            </ul>
+        </div> <!-- end of menu -->
+        <div id="templatemo_header">
+            <div id="templatemo_special_offers">
+                <p>
+                    <span>25%</span> discounts for
+                    purchase over $80
+                </p>
+                <a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+            </div>
+
+
+            <div id="templatemo_new_books">
+                <ul>
+                    <li>Suspen disse</li>
+                    <li>Maece nas metus</li>
+                    <li>In sed risus ac feli</li>
+                </ul>
+                <a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+            </div>
+        </div> <!-- end of header -->
+
+        <div id="templatemo_content">
+            @RenderBody()
+        </div> <!-- end of content -->
+
+        @Html.Partial("_PartialFooter")
+        <!-- end of footer -->
+        <!--  Free CSS Template www.templatemo.com -->
+    </div> <!-- end of container -->
+    <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+</body>
+</html>

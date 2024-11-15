@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/Login.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center text-uppercase text-dark mt-5">Đăng nhập hệ thống quản trị</h2>
+                <div class="text-center mb-5 text-dark">Vui lòng nhập User Name và Password</div>
+                <h4 style="color: red; text-align: center">@ViewBag.ThongBao</h4>
+                <div class="card my-5">
+                    <div class="card-body cardbody-color p-lg-5">
+                        <div class="text-center">
+                            <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                                 width="200" alt="profile">
+                        </div>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="Username" name="username" aria-describedby="emailHelp"
+                                       placeholder="Username...">
+                                @ViewData["Loi1"]
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="password" name="password"
+                                       placeholder="Password...">
+                                @ViewData["Loi2"]
+                            </div>
+                            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Đăng nhập</button></div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
